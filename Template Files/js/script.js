@@ -59,17 +59,21 @@ function initCreative()
     initButtons();
     addVideoEvents();
     setAudioImage();
+
+    var rnd = Math.floor(Math.random()*900000) + 100000;
+    var img = new Image();
+    img.src = 'https://bs.serving-sys.com/Serving/adServer.bs?cn=display&c=19&pli=1074204689&adid=1074740805&ord='+rnd;
 }
 
 function initButtons()
 {
-    controlButton = document.getElementById("controlButton")
+    controlButton = document.getElementById("controlButton");
     controlButton.addEventListener("click", togglePlayback);
 
-    audioButton = document.getElementById("audioButton")
+    audioButton = document.getElementById("audioButton");
     audioButton.addEventListener("click", toggleAudio);
 
-    clickButton = document.getElementById("clickButton")
+    clickButton = document.getElementById("clickButton");
     clickButton.addEventListener("click", onClickThrough);
 }
 

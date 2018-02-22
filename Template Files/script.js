@@ -59,6 +59,7 @@ function initCreative()
     initButtons();
     addVideoEvents();
     setAudioImage();
+    VPAID.disableAutoClose();
 
     var rnd = Math.floor(Math.random()*900000) + 100000;
     var img = new Image();
@@ -101,7 +102,10 @@ function onVideoEvent(event)
     switch(event.type)
     {
         case "ended" :
-            VPAID.closeAd();
+            //EB.automaticEventCounter('videoEnd1');
+            setTimeout(function(){
+                VPAID.closeAd();
+            },1000);
             break;
         case "pause" :
             paused = true;
